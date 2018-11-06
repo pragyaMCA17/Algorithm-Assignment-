@@ -4,8 +4,8 @@
 #include<vector>
 using namespace std;
 
-#define M 20
-#define N 4
+#define M 20            // number of miles
+#define N 4             //number of billboards
 
 int rev[M+1]={};        // initialise revenue array with all 0's
 int r[N];               // revenue array
@@ -13,7 +13,7 @@ int m[N];               // billboard at miles array
 int k=0;                //counter
 
 //to check if billboard can be placed at that mile or not
-bool can_place(int j)
+bool can_place(int j)       //j is the mile
 {
     if(j==m[k])
         return true;
@@ -53,7 +53,7 @@ int Billboard()
         if(can_place(i))
         {
 
-                rev[i]=std::max(rev[i-1],abs(rev[i-6])+r[k]);
+                rev[i]=std::max(rev[i-1],abs(rev[i-6])+r[k]);           //recurssive condition
                 k++;
 
         }
