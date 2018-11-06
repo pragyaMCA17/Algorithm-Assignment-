@@ -4,10 +4,11 @@ using namespace std;
 #define N 4
 
 int board[N][N];
-int colcheck[N];
-int d1check[N+3];
+int colcheck[N];      //col check
+int d1check[N+3];  
 int d2check[N+3];   //principal diagnol
 
+// to print the board
 void print()
 {
     cout<<endl;
@@ -21,7 +22,8 @@ void print()
     }
 }
 
-bool isSafe(int row, int col)
+// check the position to place the queen
+bool can_place(int row, int col)
 {
     if(colcheck[col]!=0) return false;
     if (d1check[row+col]!=0)  return false;
@@ -29,8 +31,8 @@ bool isSafe(int row, int col)
     return true;
 }
 
-
-void solve(int r)
+//solving ........
+void solve(int r)       //r=row number
 {
     if(r==N)
    {    print();
@@ -39,7 +41,7 @@ void solve(int r)
 
     for(int c=0;c<N;c++)
     {
-        if(isSafe(r,c))
+        if(can_place(r,c))
             { board[r][c]= 1;
 
               colcheck[c]=1;
@@ -50,8 +52,8 @@ void solve(int r)
 
               board[r][c]=0;
               colcheck[c]=0;            //folding back if no valid space
-              d1check[r+c]=0;
-              d2check[r-c+N-1]=0;
+              d1check[r+c]=0;           //folding back if no valid space
+              d2check[r-c+N-1]=0;       //folding back if no valid space
 
             }
 
@@ -61,7 +63,7 @@ void solve(int r)
 int main()
 {
     cout<<"N-Queen's Problem for N="<<N<<endl;
-    solve(0);
+    solve(0); //starts with 0th row (since array begins from 0)
 }
 
 
