@@ -7,7 +7,7 @@ int main()
 
     cout<<" Enter length of sequence : ";
     cin>>n;
-    string S[n];
+    string S[n];                            //sequence string
     cout<<"\nInput Sequence S :\n";
     cin.ignore(256,'\n');
     for(i=0 ; i<n ; i++)
@@ -20,7 +20,7 @@ int main()
     //subsequence enter
     cout<<"\nEnter Subsequence length : ";
     cin>>m;
-    string s[m];
+    string s[m];                            //subsequence string 
     cout<<"\nInput Subsequence s :\n";
     cin.ignore(256,'\n');
     for(i=0 ; i<m ; i++)
@@ -49,7 +49,7 @@ int main()
            {j++;}
     }
 
-    if(j==m)
+    if(j==m)            //subsequence completely traversed
     {
         cout<<"\n\nSubsequence is present !!!";
     }
