@@ -11,6 +11,12 @@ int d2check[N+3];   //principal diagnol
 // to print the board
 void print()
 {
+    /*
+    Objective: to print the board with positions of queen marked with 1's
+    Input : None
+    Return Values : None
+    */
+    
     cout<<endl;
     for(int i=0;i<N;i++)
     {
@@ -25,6 +31,14 @@ void print()
 // check the position to place the queen
 bool can_place(int row, int col)
 {
+    
+    /*
+    Objective: to check for valid positions on board for queen to be placed without voilating the constraint.
+    Input : row     : row number 
+            col     : colomn number 
+    Return Values : True/false
+    */
+    
     if(colcheck[col]!=0) return false;
     if (d1check[row+col]!=0)  return false;
     if(d2check[row-col+N-1]!=0)return false;
@@ -34,6 +48,13 @@ bool can_place(int row, int col)
 //solving ........
 void solve(int r)       //r=row number
 {
+    
+    /*
+    Objective: Solving for each position and placing the queen , calling the print function at end (r==N)
+    Input : r   : row number 
+    Return Values : None
+    */
+    
     if(r==N)
    {    print();
         return ;
