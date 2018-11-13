@@ -1,10 +1,24 @@
 #include <iostream>
 #include<cstring>
 using namespace std;
+
+
 int n,m,i;
+//n= length of sequence
+//m= length of subsequence
+//i = counter variable 
+
+
 int main()
 {
-
+    /*
+    Objective : To check if the subseqyence entered occurs in sequence inputted in O(m+n) 
+    Input : user input of string and substring along with m , n(lengths)
+    Return values : None 
+    */
+    
+                //sequence string inputting......
+    
     cout<<" Enter length of sequence : ";
     cin>>n;
     string S[n];                            //sequence string
@@ -17,7 +31,8 @@ int main()
         getline(cin,S[i]);
     }
 
-    //subsequence enter
+                 //subsequence entering.........
+    
     cout<<"\nEnter Subsequence length : ";
     cin>>m;
     string s[m];                            //subsequence string 
@@ -30,7 +45,8 @@ int main()
         getline(cin,s[i]);
     }
 
-    //print sequence and subsequence entered....
+                 //print sequence and subsequence entered.........
+    
     cout<<"\n\nSEQUENCE ENTERED : \n";
     for(i=0;i<n;i++)
     {
@@ -42,13 +58,15 @@ int main()
         cout<<s[i]<<" , ";
     }
 
-    int j=0;            // to access subsequence elements
+    
+    int j=0;            // to access subsequence elements , j is counter variable
     for(i=0 ; i<n ; i++)
     {
-        if(s[j].compare(S[i])==0) // string comparison
+        if(s[j].compare(S[i])==0) // string comparison (0 = if equal)
            {j++;}
     }
 
+    
     if(j==m)            //subsequence completely traversed
     {
         cout<<"\n\nSubsequence is present !!!";
