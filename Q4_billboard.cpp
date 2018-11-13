@@ -1,7 +1,7 @@
 #include<iostream>
 #include<algorithm>
 #include<cstdlib>
-#include<vector>
+#include<vector>        //for vector STL
 using namespace std;
 
 #define M 20            // number of miles
@@ -10,11 +10,18 @@ using namespace std;
 int rev[M+1]={};        // initialise revenue array with all 0's
 int r[N];               // revenue array
 int m[N];               // billboard at miles array
-int k=0;                //counter
+int k=0;                //counter variable
 
-//to check if billboard can be placed at that mile or not
+
 bool can_place(int j)       //j is the mile
 {
+    
+    /*
+    Objective: to check if billboard can be found at that mile or not.
+    Input : j   : denotes mile 
+    Return Value : True/False
+    */
+    
     if(j==m[k])
         return true;
 
@@ -25,13 +32,19 @@ bool can_place(int j)       //j is the mile
 //to print billboard positions
 void backtrack()
 {
+     /*
+    Objective: to print the final positions selected for billboard from the set of available billboard position set.
+    Input : -
+    Return Value : None
+    */
+    
     vector<int> pos;
     for( int i=M ; i>=0; i--)
     {
         if(rev[i]!=rev[i-1])
            {
                pos.push_back(i);
-               i=i-5;           // to jump to previous billboard
+               i=i-5;           // to jump to previous billboard at distance check of 5 mile (given)
            }
     }
     cout<<"\n\nPosition of Billboard will be : \n";
@@ -45,6 +58,14 @@ void backtrack()
 //solving billboard problem
 int Billboard()
 {
+     /*
+    Objective: solve for each mjle position .
+    Input : None  
+    Return Value : final revenue at the end after placing the billboard at optimal positions given the constraint.
+    
+    APPROACH : rev[i]=max{(rev[i-1],abs(rev[i-6])+r[k])};
+    */
+    
     for(int i=0;i<=M; i++)
     {
         if (i==0)
@@ -62,7 +83,7 @@ int Billboard()
         }
     }
 
-    return rev[M];
+    return rev[M];      //revenue generated .
 }
 
 
