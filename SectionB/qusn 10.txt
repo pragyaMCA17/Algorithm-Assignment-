@@ -147,7 +147,7 @@ line 5		-> if the condition in this line is satisfied, the value of j is again s
 		   which implies there will be more than n iterations in line 2. In worst case value of j is set to 1 by every value of j,
 		   therefore the main loop runs atmost n^2 times.
 line 6-8	-> O(1)
-line 9		-> if this condition is true, we will come out of the main loop. and line 10-11 will iterate n times but only once, hence it 			   will not effect the degree of time complexity
+line 9		-> if this condition is true, we will come out of the main loop. and line 10-11 will iterate n times but only once, hence it 	will not effect the degree of time complexity
 
 --------------------------------------------------
 
