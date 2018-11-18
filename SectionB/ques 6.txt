@@ -35,7 +35,7 @@ Programming Approach
 	
 
 	DOCUMENTATION:
-
+	
 	/*
     	Objective: the function checking whether 'c' is the majority element of all or not.
    	Input Variables:
@@ -101,7 +101,7 @@ Divides the input into equal halves.
 
 Function check(int, int *, int, int)
 Checks whether the element is in majority or not. It takes O(n) time.
-Let us denote the running time of the algorithm on array of size ‘n’, by T(n). 
+Let us denote the running time of the algorithm on array of size â€˜nâ€™, by T(n). 
 Then,
 T(n) = T(n/2) + T(n/2) +O(n),		if n>2
        O(1),					if n=2
