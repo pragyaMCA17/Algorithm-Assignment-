@@ -7,7 +7,7 @@ Promlem statement : 7
 Programming Approach
 --------------------
 
-1. Divide and Conquer
+1. Dynamic Programming
 2. Iterative
 
 -----------
